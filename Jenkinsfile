@@ -20,7 +20,8 @@ pipeline {
     }
     stage('Deploy'){
       steps {
-        sh 'pm2 startOrRestart dev'
+        sh 'npm run build'
+        sh 'pm2 startOrRestart dist/app.js'
       }
     }
   }
