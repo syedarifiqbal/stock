@@ -10,17 +10,17 @@ pipeline {
     }
     stage('Install Dependencies'){
       steps {
-        bat 'npm install'
+        sh 'npm install'
       }
     }
     stage('Install PM2'){
       steps {
-        bat 'npm install -g pm2'
+        sh 'npm install -g pm2'
       }
     }
     stage('Deploy'){
       steps {
-        bat 'pm2 startOrRestart dev'
+        sh 'pm2 startOrRestart dev'
       }
     }
   }
