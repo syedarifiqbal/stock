@@ -21,7 +21,7 @@ pipeline {
     stage('Deploy'){
       steps {
         sh 'npm run build'
-        sh 'pm2 startOrRestart dist/app.js'
+        sh 'node dist/app.js'
       }
     }
   }
